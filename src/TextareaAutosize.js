@@ -95,13 +95,13 @@ export default class TextareaAutosize extends React.Component {
   }
 
   componentDidMount() {
-    this._resizeComponent();
+    this._resizeComponent(this.props.value);
     window.addEventListener('resize', this._resizeComponent);
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
     // Re-render with the new content then recalculate the height as required.
-    this._resizeComponent();
+    this._resizeComponent(nextProps.value);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -122,7 +122,7 @@ export default class TextareaAutosize extends React.Component {
   }
 
   _onChange(e) {
-    this._resizeComponent();
+    this._resizeComponent(this.props.value);
     let {valueLink, onChange} = this.props;
     if (valueLink) {
       valueLink.requestChange(e.target.value);
@@ -131,13 +131,15 @@ export default class TextareaAutosize extends React.Component {
     }
   }
 
-  _resizeComponent() {
+  _resizeComponent(newValue) {
     let {useCacheForDOMMeasurements} = this.props;
-    this.setState(calculateNodeHeight(
+    const calc = calculateNodeHeight(
       this._rootDOMNode,
+      newValue,
       useCacheForDOMMeasurements,
       this.props.rows || this.props.minRows,
-      this.props.maxRows));
+      this.props.maxRows);
+    this.setState(calc);
   }
 
   /**
