@@ -70,7 +70,13 @@ export default class TextareaAutosize extends React.Component {
   }
 
   render() {
-    let {valueLink, ...props} = this.props;
+    // Remove unsupported <textarea> props
+    let {valueLink,
+         useCacheForDOMMeasurements,
+         minRows,
+         onHeightChange,
+         ...props} = this.props;
+
     props = {...props};
     if (typeof valueLink === 'object') {
       props.value = this.props.valueLink.value;
