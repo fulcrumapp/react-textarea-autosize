@@ -25,9 +25,7 @@
   ],
   "license": "MIT",
   "main": "lib/TextareaAutosize.js",
-  "peerDependencies": {
-    "react": ">=0.14.0 <16.0.0"
-  },
+  "peerDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/andreypopp/react-textarea-autosize.git"
@@ -39,5 +37,7 @@
     "eslint-config-prometheusresearch": "^0.2.0",
     "react": "^15.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-proptypes": "^1.0.0"
+  }
 }
