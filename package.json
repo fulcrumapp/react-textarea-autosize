@@ -1,12 +1,8 @@
 {
-  "name": "react-textarea-autosize",
+  "name": "@fulcrumapp/react-textarea-autosize",
   "description": "textarea component for React which grows with content",
-  "version": "4.0.0",
-  "author": {
-    "name": "Andrey Popp",
-    "email": "8mayday@gmail.com",
-    "url": "http://andreypopp.com"
-  },
+  "version": "0.0.1",
+  "author": "",
   "homepage": "https://github.com/andreypopp/react-textarea-autosize",
   "eslintConfig": {
     "extends": "prometheusresearch"
@@ -16,6 +12,9 @@
       "prometheusresearch"
     ]
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "react",
     "react-component",
@@ -23,12 +22,12 @@
     "grow",
     "autosize"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "main": "lib/TextareaAutosize.js",
   "peerDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/andreypopp/react-textarea-autosize.git"
+    "url": "git://github.com/fulcrumapp/react-textarea-autosize.git"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
